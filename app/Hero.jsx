@@ -174,6 +174,7 @@ const Hero = () => {
   
     <div className="absolute top-1/2 left-0 transform -translate-y-1/2 pl-6 flex items-center gap-4 z-10">
       <img
+        id="logo"
         src="erasebg-transformed.png"
         alt="Logo"
         style={{ width: "30%" }}

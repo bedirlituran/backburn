@@ -43,7 +43,7 @@ const Avantajlar = () => {
               <div className="card">
                 <div className="card-inner">
                   <div className="card-front">{item.icon}</div>
-                  <div className="card-back">{item.title} {item.desc}</div>
+                  <div className="font-gilroy card-back">{item.title} {item.desc}</div>
                 </div>
               </div>
             </div>

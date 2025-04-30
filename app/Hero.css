@@ -51,5 +51,9 @@
     .demo-1 .main-title {
       font-size: 3em;
     }
+
+    #logo {
+      display: none;
+    }
   }
   
