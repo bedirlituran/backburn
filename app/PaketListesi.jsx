@@ -53,40 +53,113 @@ const PaketListesi = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-slate-50 to-white pt-16"  id='paketler'>
+    <div className="bg-gradient-to-b from-slate-50 to-white pt-16" id='paketler'>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-extrabold text-center text-blue-800 mb-12">🌐 Xidmətlərimiz</h2>
+        {/* Başlık Stili Güncellendi */}
+        <h2 className="text-4xl font-bold text-center text-blue-900 mb-12 relative pb-4">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            📡 Xidmətlərimiz
+          </span>
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+        </h2>
 
+        {/* Servis Kartları Güncellendi */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-blue-50"
             >
-              <img className="w-full h-48 object-contain" src={service.image} alt={service.name} />
-              <div className="p-5">
-                <h3 className="text-xl font-bold text-gray-800">{service.name}</h3>
-                <pre className="text-gray-600 text-sm mt-2 whitespace-pre-line">{service.price}</pre>
-                <button className="mt-4 w-full py-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold hover:from-pink-600 hover:to-purple-600 transition">
-                  Qoşul
+              <div className="h-48 w-full bg-gray-100 flex items-center justify-center p-4">
+                <img 
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                  src={service.image} 
+                  alt={service.name} 
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl">
+                    {service.name === "İnternet" && "🌐"}
+                    {service.name === "IPTV" && "📺"}
+                    {service.name === "Kabel Televiziyası" && "📡"}
+                    {service.name === "IP Telefoniya" && "📞"}
+                    {service.name === "Hosting" && "🖥️"}
+                    {service.name === "IT Xidmətləri" && "👨💻"}
+                  </span>
+                  <h3 className="text-xl font-semibold text-gray-800">{service.name}</h3>
+                </div>
+             {/* ... Diğer kodlar aynı kalacak ... */}
+
+<div className="text-gray-600 mb-5 space-y-2">
+  {service.price.split('\n').map((line, i) => {
+    const isSpecialPrice = line.includes('Qiymət');
+    return (
+      <p 
+        key={i} 
+        className={`text-sm leading-relaxed tracking-wide ${
+          isSpecialPrice ? 'italic text-gray-500' : 'font-medium'
+        }`}
+      >
+        {line.split('–').map((part, index) => (
+          <span key={index}>
+            {index > 0 && (
+              <span className="mx-2 text-blue-400">•</span>
+            )}
+            {part.trim().match(/[0-9]+/g) ? (
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-lg font-bold">
+                {part.trim()}
+              </span>
+            ) : (
+              <span className={index === 0 ? "text-gray-700" : ""}>
+                {part.trim()}
+              </span>
+            )}
+          </span>
+        ))}
+      </p>
+    );
+  })}
+</div>
+
+{/* ... Kampanya kısmı aynı kalacak ... */}
+                <button className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium hover:from-blue-600 hover:to-purple-600 transition-all shadow-md hover:shadow-lg">
+                  🚀 Qoşul
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Kampaniyalar */}
-        <h2 className="text-4xl font-extrabold text-center text-blue-800 mt-24 mb-10">🎁 Kampaniyalar</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Kampanya Bölümü Güncellendi */}
+        <h2 className="text-4xl font-bold text-center text-blue-900 mt-24 mb-12 relative pb-4">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-600">
+            🎉 Xüsusi Təkliflər
+          </span>
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-green-400 to-blue-400 rounded-full"></div>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {campaigns.map((camp, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+              className="relative overflow-hidden rounded-xl group hover:shadow-xl transition-all duration-300 border border-gray-100"
             >
-              <img className="w-full h-48 object-cover" src={camp.image} alt={camp.title} />
-              <div className="p-5">
-                <h3 className="text-xl font-bold text-gray-800">{camp.title}</h3>
-                <p className="text-gray-600 text-sm mt-2">{camp.description}</p>
+              <div className="h-48 bg-gray-100 overflow-hidden">
+                <img 
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                  src={camp.image} 
+                  alt={camp.title} 
+                />
+              </div>
+              <div className="p-6 bg-white">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{camp.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed tracking-wide">
+                  {camp.description}
+                </p>
+                <button className="mt-4 text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2">
+                  Ətraflı →
+                </button>
               </div>
             </div>
           ))}
