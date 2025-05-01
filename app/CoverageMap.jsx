@@ -21,7 +21,7 @@ const CoverageMap = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
             <MapPin className="mx-auto mb-3 text-blue-600" size={32} />
-            <h4 className="font-semibold text-lg">25+ Şəhər</h4>
+            <h4 className="font-semibold text-lg">8+ Şəhər</h4>
             <p className="text-sm text-gray-600">Bakı, Gəncə, Sumqayıt və digər iri şəhərlərdə xidmət.</p>
           </div>
           <div>

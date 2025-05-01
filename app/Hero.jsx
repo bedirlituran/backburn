@@ -33,11 +33,11 @@ const Hero = () => {
         }
       }
 
-      for (let i = 0; i < points.length; i++) {
+      for (const element of points) {
         let closest = [];
-        let p1 = points[i];
-        for (let j = 0; j < points.length; j++) {
-          let p2 = points[j];
+        let p1 = element;
+        for (const element of points) {
+          let p2 = element;
           if (p1 !== p2) {
             let placed = false;
             for (let k = 0; k < 5; k++) {
@@ -63,8 +63,8 @@ const Hero = () => {
         p1.circle = new Circle(p1, 2 + Math.random() * 2, "rgba(255,255,255,0.3)");
       }
 
-      for (let i = 0; i < points.length; i++) {
-        shiftPoint(points[i]);
+      for (const element of points) {
+        shiftPoint(element);
       }
 
       animate();
@@ -167,8 +167,8 @@ const Hero = () => {
     <div style={{ visibility: "hidden", fontFamily: "monospace" }} className="text-white text-xl font-bold">Backbone</div>
     <nav className="space-x-8">
       <a href="/" className="text-white hover:text-yellow-300 transition">Ana Səhifə</a>
-      <a href="/paketler" className="text-white hover:text-yellow-300 transition">Paketlər</a>
-      <a href="/əlaqə"  className="text-white hover:text-yellow-300 transition">Əlaqə</a>
+      <a href="#paketler" className="text-white hover:text-yellow-300 transition">Xidmətlər</a>
+      <a href="tel:+994123100008"  className="text-white hover:text-yellow-300 transition">Əlaqə</a>
     </nav>
     </div>
   

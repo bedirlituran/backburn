@@ -3,7 +3,7 @@ import React from 'react';
 
 const stats = [
   { label: 'Müştəri sayı', value: '12.000+' },
-  { label: 'Şəhər üzrə əhatə', value: '25+' },
+  { label: 'Şəhər üzrə əhatə', value: '8+' },
   { label: 'Texniki mütəxəssis', value: '100+' },
   { label: 'İllik təcrübə', value: '10+' },
 ];

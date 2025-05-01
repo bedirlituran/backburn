@@ -6,20 +6,20 @@ const avantajlar = [
   {
     icon: <Zap className="w-18 h-18 text-white text-white-600" />,
     title: 'Yüksək sürət',
-    desc: 'Backbone ilə 100 Mbps-ə qədər sabit və sürətli internet bağlantısı.',
+    desc: 'Backbone ilə limitsiz, sabit və sürətli internet bağlantısı.',
   },
   {
-    icon: <ShieldCheck className="w-18 h-18 text-white text-blue-600" />,
+    icon: <ShieldCheck className="w-18 h-18 text-white " />,
     title: 'Təhlükəsiz bağlantı',
     desc: 'Məlumatlarınız SSL ilə qorunur, təhlükəsiz şəbəkə təcrübəsi.',
   },
   {
-    icon: <Clock className="w-18 h-18 text-white text-blue-600" />,
+    icon: <Clock className="w-18 h-18 text-white " />,
     title: '24/7 Dəstək',
     desc: 'İstənilən vaxt texniki dəstək komandamız xidmətinizdədir.',
   },
   {
-    icon: <Wifi className="w-18 h-18 text-white text-blue-600" />,
+    icon: <Wifi className="w-18 h-18 text-white " />,
     title: 'Limitsiz istifadə',
     desc: 'Heç bir kvota və sürət düşməsi olmadan tam limitsiz internet.',
   },

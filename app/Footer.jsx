@@ -1,4 +1,5 @@
 import React from 'react';
+import "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -31,8 +32,8 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Əlaqə</h3>
             <p className="text-sm">Əlavə məlumat üçün bizimlə əlaqə saxlaya bilərsiniz:</p>
-            <p className="text-sm">Telefon: +994 12 345 67 89</p>
-            <p className="text-sm">E-poçt: support@backbone.com</p>
+            <p className="text-sm">Telefon: +994 12 310 00 08</p>
+            <p className="text-sm">E-poçt: support@backbone.az</p>
           </div>
         </div>
 
