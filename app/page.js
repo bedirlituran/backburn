@@ -7,6 +7,7 @@ import CoverageMap from "./CoverageMap";
 import CallToAction from "./CallToAction";
 import StatNumbers from "./StatNumbers"
 import Footer from "./Footer";
+import WhatsAppButton from "./WhatsAppButton";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <PaketListesi />
       <Avantajlar/>
       <StatNumbers />
+      <WhatsAppButton/>
 <Reviews />
 <CoverageMap />
 <CallToAction />

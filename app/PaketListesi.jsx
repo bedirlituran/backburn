@@ -4,23 +4,23 @@ const PaketListesi = () => {
   const services = [
     {
       name: "İnternet",
-      price: "100 mbit/s – 15 AZN\n200 mbit/s – 25 AZN\n300 mbit/s – 30 AZN\n+ IPTV – 5 AZN",
+      price: "100 mbit/s – 15 AZN\n+ IPTV – 5 AZN",
       image: "https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       name: "IPTV",
       price: "10 AZN",
-      image: "https://images.pexels.com/photos/15458676/pexels-photo-15458676/free-photo-of-smart-tv-with-app-icons.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnwtZnIkMVLh1FT3Wof6VErlZ--ue8iS4hDoEcOguZTnGqR9A8CGD9VIMrH7UnP7i71dU&usqp=CAU"
     },
     {
       name: "Kabel Televiziyası",
       price: "10 AZN",
-      image: "https://images.pexels.com/photos/276523/pexels-photo-276523.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://d1u6g1e1nisfhs.cloudfront.net/wp-content/uploads/articles-network-tv-cable-streaming-sq.jpg"
     },
     {
       name: "IP Telefoniya",
       price: "3.50 AZN",
-      image: "https://images.pexels.com/photos/886743/pexels-photo-886743.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBj_IZdJrHeHK05dv6-sMjHr7qLuH2Bfwjr4K5akUTo9F9qSsg_pADE164VAyNWUZmwc&usqp=CAU"
     },
     {
       name: "Hosting",
@@ -53,7 +53,7 @@ const PaketListesi = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-slate-50 to-white pt-16">
+    <div className="bg-gradient-to-b from-slate-50 to-white pt-16"  id='paketler'>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-extrabold text-center text-blue-800 mb-12">🌐 Xidmətlərimiz</h2>
 
@@ -63,7 +63,7 @@ const PaketListesi = () => {
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <img className="w-full h-48 object-cover" src={service.image} alt={service.name} />
+              <img className="w-full h-48 object-contain" src={service.image} alt={service.name} />
               <div className="p-5">
                 <h3 className="text-xl font-bold text-gray-800">{service.name}</h3>
                 <pre className="text-gray-600 text-sm mt-2 whitespace-pre-line">{service.price}</pre>

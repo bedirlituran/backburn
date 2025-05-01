@@ -14,7 +14,7 @@ const Footer = () => {
 
           {/* Ortada Sosial Media Linkləri */}
           <div className="flex justify-center">
-            <a href="#" className="mx-4 text-2xl hover:text-blue-400">
+            {/* <a href="#" className="mx-4 text-2xl hover:text-blue-400">
               <i className="fab fa-facebook"></i>
             </a>
             <a href="#" className="mx-4 text-2xl hover:text-blue-400">
@@ -25,7 +25,7 @@ const Footer = () => {
             </a>
             <a href="#" className="mx-4 text-2xl hover:text-blue-400">
               <i className="fab fa-linkedin"></i>
-            </a>
+            </a> */}
           </div>
 
           {/* Sağ Tarafta İletişim Məlumatları */}
