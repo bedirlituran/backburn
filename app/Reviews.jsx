@@ -25,13 +25,25 @@ const Reviews = () => {
   return (
     <section className="py-24 bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-blue-800 mb-12">Müştəri Rəyləri</h2>
-        <div className="grid md:grid-cols-3 gap-10">
+        <h2 className="text-4xl font-extrabold text-center text-blue-900 mb-16">
+          Müştəri Rəyləri
+        </h2>
+        <div className="grid md:grid-cols-3 gap-12">
           {reviews.map((r, i) => (
-            <div key={i} className="bg-white shadow-xl rounded-2xl p-6 flex flex-col items-center text-center">
-              <img src={r.image} alt={r.name} className="w-20 h-20 rounded-full mb-4 border-4 border-blue-500" />
-              <p className="italic text-gray-700 mb-4">“{r.comment}”</p>
-              <h4 className="font-semibold text-blue-800">{r.name}</h4>
+            <div
+              key={i}
+              className="bg-white shadow-xl rounded-3xl p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            >
+              <div className="relative">
+                <img
+                  src={r.image}
+                  alt={r.name}
+                  className="w-24 h-24 rounded-full border-4 border-blue-500 shadow-md object-cover"
+                />
+                <div className="absolute top-0 right-0 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></div>
+              </div>
+              <p className="italic text-gray-700 mt-6 mb-4 leading-relaxed">“{r.comment}”</p>
+              <h4 className="font-semibold text-blue-800 text-lg">{r.name}</h4>
               <span className="text-sm text-gray-500">{r.job}</span>
             </div>
           ))}
