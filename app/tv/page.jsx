@@ -323,24 +323,60 @@ const channels = [
 ];
 
 
-const ChannelList = () => {
+const page = () => {
   return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Başlıq */}
+      <div className="mb-8 border-b border-blue-100 pb-6">
+        <h1 className="text-4xl font-bold text-gray-900 text-center">
+          <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+            TV Kanalları
+          </span>
+          <span className="ml-4 text-blue-500 bg-blue-50 px-4 py-2 rounded-full text-lg">
+            {channels.length}+ Kanal
+          </span>
+        </h1>
+      </div>
 
-    <div>
-     
-      <h1 className="text-2xl font-bold mb-4">TV Kanal Siyahısı</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {/* Kanal Listesi */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {channels.map((channel) => (
-          <div key={channel.id} className="p-4 rounded-md text-center font-semibold">
-            <div className='flex gap-3 items-center'>
-                <p className='text-start'>{channel.id}.</p>
-            <p className="text-center font-semibold">{channel.name}</p></div>
-          
+          <div
+            key={channel.id}
+            className="group relative p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-200 hover:border-blue-200"
+          >
+            {/* Nömrə Badgesi */}
+            <div className="absolute top-2 right-2 bg-blue-50 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
+              {channel.id}
+            </div>
+            
+            {/* Kanal Kontenti */}
+            <div className="flex items-center space-x-3">
+              <div className="flex-shrink-0">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <span className="text-blue-600 text-xl">📺</span>
+                </div>
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-semibold text-gray-900 truncate">
+                  {channel.name.trim()}
+                </p>
+                <p className="text-xs text-gray-500 mt-1">HD Yayın</p>
+              </div>
+            </div>
+
+            {/* Hover Effect Bar */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-xl"></div>
           </div>
         ))}
+      </div>
+
+      {/* Footer Mesajı */}
+      <div className="mt-8 text-center text-sm text-gray-500">
+        * Kanalların mövcudluyu regiondan asılı olaraq dəyişə bilər
       </div>
     </div>
   );
 };
 
-export default ChannelList;
+export default page;

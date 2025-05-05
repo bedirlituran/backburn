@@ -167,6 +167,8 @@ const Hero = () => {
     <div style={{ visibility: "hidden", fontFamily: "monospace" }} className="text-white text-xl font-bold">Backbone</div>
     <nav className="space-x-8">
       <a href="/" className="text-white hover:text-yellow-300 transition">Ana Səhifə</a>
+      <a href="/tv" className="text-white hover:text-yellow-300 transition">Tv kanallar</a>
+
       <a href="#paketler" className="text-white hover:text-yellow-300 transition">Xidmətlər</a>
       <a href="tel:+994123100008"  className="text-white hover:text-yellow-300 transition">Əlaqə</a>
     </nav>

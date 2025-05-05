@@ -43,7 +43,7 @@ const PaketListesi = () => {
     {
       title: "5+1 Kampaniyası",
       description: "5 aylıq xidmət ödənişini et, 1 ay bizdən hədiyyə olsun.",
-      image: "https://images.pexels.com/photos/3943725/pexels-photo-3943725.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "./komp.png"
     },
     {
       title: "Mövsüm Kampaniyası",

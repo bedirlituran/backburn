@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Revievs from './Revievs';
 const reviews = [
   {
     name: 'Elvin Məmmədov',
@@ -49,6 +49,8 @@ const Reviews = () => {
           ))}
         </div>
       </div>
+<Revievs/>
+      
     </section>
   );
 };
