@@ -5,6 +5,7 @@ const Revievs = () => {
   const [newReview, setNewReview] = useState({
     name: '',
     surname: '',
+    mobile: '',
     comment: '',
     job: '',
     image: null
@@ -13,16 +14,31 @@ const Revievs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Email göndərmə məntiqi (EmailJS və ya başqa servis istifadə edə bilərsiniz)
+    // Mobil nömrə validasiyası
+    const mobileRegex = /^(\+994|0)(50|51|55|70|77|99)\d{7}$/;
+    if (!mobileRegex.test(newReview.mobile)) {
+      alert('Zəhmət olmasa düzgün Azərbaycan mobil nömrəsi daxil edin (+994XXXXXXXXX və ya 0XXXXXXXXX)');
+      return;
+    }
+
+    // Email göndərmə
     const mailtoLink = `mailto:support@backbone.az?subject=Yeni Rəy&body=
       Ad: ${newReview.name} ${newReview.surname}%0D%0A
+      Nömrə: ${newReview.mobile}%0D%0A
       Peşə: ${newReview.job}%0D%0A
       Mesaj: ${newReview.comment}%0D%0A
       Şəkil: ${newReview.image ? newReview.image.name : 'Yoxdur'}
     `;
 
     window.location.href = mailtoLink;
-    setNewReview({ name: '', surname: '', comment: '', job: '', image: null });
+    setNewReview({ 
+      name: '', 
+      surname: '', 
+      mobile: '',
+      comment: '', 
+      job: '', 
+      image: null 
+    });
   };
 
   const handleImageUpload = (e) => {
@@ -39,15 +55,6 @@ const Revievs = () => {
   return (
     <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto px-6">
-        {/* Mövcud rəylər */}
-        {/* <h2 className="text-4xl font-extrabold text-center text-blue-900 mb-16">
-          Müştəri Rəyləri
-        </h2> */}
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* ... mövcud rəy kartları ... */}
-        </div>
-
-        {/* Yeni Rəy Formu */}
         <div className="mt-20 max-w-2xl mx-auto">
           <div className="bg-white shadow-xl rounded-3xl p-8">
             <h3 className="text-2xl font-bold text-blue-800 mb-6 text-center">
@@ -73,6 +80,16 @@ const Revievs = () => {
                   required
                 />
               </div>
+
+              <input
+                type="tel"
+                placeholder="Mobil nömrə (+994 XXX XXX XXX)"
+                className="w-full p-3 border rounded-lg focus:ring-2 ring-blue-300 outline-none"
+                pattern="^(\+994|0)(50|51|55|70|77|99)\d{7}$"
+                value={newReview.mobile}
+                onChange={(e) => setNewReview({...newReview, mobile: e.target.value})}
+                required
+              />
 
               <input
                 type="text"

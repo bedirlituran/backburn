@@ -1,12 +1,11 @@
 // pages/index.js veya istediğiniz sayfanın dosyası
 
 "use client"
-import React from 'react';
-import { useState } from 'react';
+import React ,{ useState}from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
-  const [phoneNumber] = useState('+994558080801');
+  const [phoneNumber] = useState('+994706622266');
 
   const openWhatsApp = () => {
     const url = `https://wa.me/${phoneNumber}`;
