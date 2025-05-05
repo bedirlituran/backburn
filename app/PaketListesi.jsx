@@ -48,7 +48,7 @@ const PaketListesi = () => {
     {
       title: "Mövsüm Kampaniyası",
       description: "İndi qoşul, ilk ay sadəcə 1 AZN ödə.",
-      image: "https://images.pexels.com/photos/2959191/pexels-photo-2959191.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "./m.png"
     }
   ];
 
@@ -147,7 +147,7 @@ const PaketListesi = () => {
             >
               <div className="h-48 bg-gray-100 overflow-hidden">
                 <img 
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                  className="w-full h-full object-cover hover:object-contain transition-transform duration-300 group-hover:scale-105" 
                   src={camp.image} 
                   alt={camp.title} 
                 />

@@ -1,14 +1,13 @@
 // src/components/Hero.jsx
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef,useState } from "react";
 import "./Hero.css";
 import { gsap } from "gsap";
-import Navbar from './Navbar';
 
 const Hero = () => {
   const canvasRef = useRef(null);
   const headerRef = useRef(null);
-
+  const [isMenuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const canvas = canvasRef.current;
     const largeHeader = headerRef.current;
@@ -164,15 +163,51 @@ const Hero = () => {
   
     {/* Navbar */}
     <div className="absolute top-0 left-0 w-full z-20 flex justify-between items-center p-4 bg-transparent">
-    <div style={{ visibility: "hidden", fontFamily: "monospace" }} className="text-white text-xl font-bold">Backbone</div>
-    <nav className="space-x-8">
-      <a href="/" className="text-white hover:text-yellow-300 transition">Ana Səhifə</a>
-      <a href="/tv" className="text-white hover:text-yellow-300 transition">Tv kanallar</a>
+  {/* Mobile Menu Button (hidden on desktop) */}
+  <button 
+    className="md:hidden text-white focus:outline-none"
+    onClick={() => setMenuOpen(!isMenuOpen)}
+    aria-label="Toggle menu"
+  >
+    <svg 
+      className="w-8 h-8"
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      {isMenuOpen ? (
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+      ) : (
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+      )}
+    </svg>
+  </button>
 
-      <a href="#paketler" className="text-white hover:text-yellow-300 transition">Xidmətlər</a>
-      <a href="tel:+994123100008"  className="text-white hover:text-yellow-300 transition">Əlaqə</a>
-    </nav>
+  {/* Logo (hidden on mobile) */}
+  <div style={{ fontFamily: "monospace" }} className="text-white text-xl font-bold hidden md:block">
+    Backbone
+  </div>
+
+  {/* Desktop Navigation (hidden on mobile) */}
+  <nav className="hidden md:flex space-x-8">
+    <a href="/" className="text-white hover:text-yellow-300 transition">Ana Səhifə</a>
+    <a href="/tv" className="text-white hover:text-yellow-300 transition">Tv kanallar</a>
+    <a href="#paketler" className="text-white hover:text-yellow-300 transition">Xidmətlər</a>
+    <a href="tel:+994123100008" className="text-white hover:text-yellow-300 transition">Əlaqə</a>
+  </nav>
+
+  {/* Mobile Menu (dropdown) */}
+  {isMenuOpen && (
+    <div className="absolute top-full left-0 w-full bg-black/90 md:hidden">
+      <div className="flex flex-col items-center py-4 space-y-4">
+        <a href="/" className="text-white hover:text-yellow-300 px-4 py-2">Ana Səhifə</a>
+        <a href="/tv" className="text-white hover:text-yellow-300 px-4 py-2">Tv kanallar</a>
+        <a href="#paketler" className="text-white hover:text-yellow-300 px-4 py-2">Xidmətlər</a>
+        <a href="tel:+994123100008" className="text-white hover:text-yellow-300 px-4 py-2">Əlaqə</a>
+      </div>
     </div>
+  )}
+</div>
   
     <div className="absolute top-1/2 left-0 transform -translate-y-1/2 pl-6 flex items-center gap-4 z-10">
       <img
