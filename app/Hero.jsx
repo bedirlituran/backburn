@@ -184,14 +184,14 @@ const Hero = () => {
           Sürətli və Etibarlı <br /> <span className="text-yellow-300">İnternet Xidməti</span>
         </h1>
         <p className="text-lg md:text-xl mb-6 text-gray-200">
-          Backbone Technology ilə evinizə və iş yerinizə 100 Mbps-ə qədər fiber-optik bağlantı.
+          Backbone Technology ilə evinizə və iş yerinizə limitsiz fiber-optik bağlantı.
           Həm sürətli, həm sərfəli!
         </p>
         <a
           href="/paketler"
           className="inline-block bg-yellow-400 hover:bg-yellow-300 text-blue-800 font-semibold px-6 py-3 rounded-md transition duration-200"
         >
-          Paketlərə Bax
+          Ödəniş et
         </a>
       </div>
     </div>
