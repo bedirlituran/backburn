@@ -4,7 +4,7 @@ const PaketListesi = () => {
   const services = [
     {
       name: "İnternet",
-      price: "100 mbit/s – 15 AZN",
+      price: "100 mbit/s – 25 AZN",
       image: "https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
