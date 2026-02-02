@@ -225,7 +225,7 @@ const Hero = () => {
           Həm sürətli, həm sərfəli!
         </p>
         <a
-          href="/paketler"
+          href="https://fpay.az/guest/payments/new-payment/category/4950/merchant/6205"
           className="inline-block bg-yellow-400 hover:bg-yellow-300 text-blue-800 font-semibold px-6 py-3 rounded-md transition duration-200"
         >
           Ödəniş et

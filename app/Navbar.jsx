@@ -22,7 +22,7 @@ const Navbar = () => {
         <a href="tel:+994558080801" className="bg-white text-blue-600 px-4 py-2 rounded-md font-semibold hover:bg-gray-100">
           Əlaqə{/* Bu hissədə "Əlaqə" yazısı oldu */}
         </a>
-        <a href="/" className="bg-white text-blue-600 px-4 py-2 rounded-md font-semibold hover:bg-gray-100">
+        <a href="https://fpay.az/guest/payments/new-payment/category/4950/merchant/6205" className="bg-white text-blue-600 px-4 py-2 rounded-md font-semibold hover:bg-gray-100">
         Ödəniş et
         </a></div>
     
